@@ -25,13 +25,13 @@ export default function App() {
   // ✅ Shared slider state
   const [bgIndex, setBgIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setBgIndex((prev) => (prev + 1) % backgrounds.length);
-    }, 3000);
+useEffect(() => {
+  const interval = setInterval(() => {
+    setBgIndex((prev) => (prev + 1) % backgrounds.length);
+  }, 3000);
 
-    return () => clearInterval(interval);
-  }, []);
+  return () => clearInterval(interval);
+}, [backgrounds.length]);
 
   return (
     <div className="app">
