@@ -31,7 +31,7 @@ export default function App() {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [backgrounds.length]);
 
   return (
     <div className="app">
@@ -158,10 +158,10 @@ export default function App() {
           <p>● Magento Automation</p>
           <p>● Tic Tac Toe (Game App)</p>
           <p>
-            ● <a href="https://github.com/Siddhartha01Sinha" target="_blank">GitHub Repo 1</a>
+            ● <a href="https://github.com/Siddhartha01Sinha" target="_blank" rel="noreferrer">GitHub Repo 1</a>
           </p>
           <p>
-            ● <a href="https://github.com/SiddharthaSinhaGitHub" target="_blank">GitHub Repo 2</a>
+            ● <a href="https://github.com/SiddharthaSinhaGitHub" target="_blank" rel="noreferrer">GitHub Repo 2</a>
           </p>
           <p>● Ansys Maxwell Design Project</p>
           <p>● Developing my own AI tools (Personal Assistant)</p>
