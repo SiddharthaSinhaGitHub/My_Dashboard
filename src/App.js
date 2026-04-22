@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import ChatBot from "./ChatBot";
 
 import companyLogoCurrent from "./assets/company-logo.jpg";
 import companyLogoPrevious from "./assets/company-logo-2.jpg";
@@ -15,6 +16,7 @@ import appreciationBg3 from "./assets/appreciation-email3.png";
 import dashboard1 from "./assets/dashboard1.png";
 import dashboard2 from "./assets/dashboard2.png";
 import Dashboard3 from "./assets/Dashboard3.png";
+import dashboard4 from "./assets/Dashboard4.png";
 
 export default function App() {
   const certificates = [certificate1, certificate2, Certificate3, Certificate4];
@@ -29,38 +31,49 @@ export default function App() {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [backgrounds.length]);
+  }, []);
 
   return (
     <div className="app">
       {/* HERO SECTION */}
       <section className="hero">
-        <div className="overlay">
 
-          {/* ✅ DROPDOWNS */}
-          <div className="top-bar">
-            <div className="dropdown">
-              <button className="dropbtn">Clients</button>
-              <div className="dropdown-content">
-                <p>FCB - Infosys</p>
-                <p>STC - IBM</p>
-              </div>
-            </div>
-
-            <div className="dropdown">
-              <button className="dropbtn">AI Trainer Platforms</button>
-              <div className="dropdown-content">
-                <p>Outlier</p>
-                <p>RWS</p>
-                <p>Innodata</p>
-                <p>Turing</p>
-              </div>
+        {/* ✅ DROPDOWNS */}
+        <div className="top-bar">
+          <div className="dropdown">
+            <button className="dropbtn">Clients</button>
+            <div className="dropdown-content">
+              <p>FCB - Infosys</p>
+              <p>STC - IBM</p>
             </div>
           </div>
 
+          <div className="dropdown">
+            <button className="dropbtn">AI Trainer Platforms</button>
+            <div className="dropdown-content">
+              <p>Outlier</p>
+              <p>RWS</p>
+              <p>Innodata</p>
+              <p>Turing</p>
+            </div>
+          </div>
+        </div>
+
+        {/* ✅ FIXED POSITION (MOVED OUTSIDE OVERLAY) */}
+        <section className="highlight">
+          <h2>What I Do</h2>
+          <div className="grid">
+            <div className="card">⚡ AI Solutions</div>
+            <div className="card">☁️ Cloud Architecture</div>
+            <div className="card">📊 Dashboard Engineering</div>
+          </div>
+        </section>
+
+        {/* ✅ MAIN CONTENT */}
+        <div className="overlay">
           <div className="logo-section">
-            <img src={companyLogoPrevious} alt="" className="company-logo previous-logo" />
-            <img src={companyLogoCurrent} alt="" className="company-logo current-logo" />
+            <img src={companyLogoPrevious} alt="" className="company-logo" />
+            <img src={companyLogoCurrent} alt="" className="company-logo" />
           </div>
 
           <div className="certificates-marquee">
@@ -70,7 +83,6 @@ export default function App() {
               ))}
             </div>
           </div>
-
           <h1>Siddhartha Sinha</h1>
           <h2>AI & Cloud Solutions Engineer</h2>
           <p>
@@ -82,6 +94,7 @@ export default function App() {
             <a href="#contact" className="btn">Hire Me</a>
           </div>
         </div>
+
       </section>
 
       {/* ✅ NEW APPRECIATION SECTION */}
@@ -120,6 +133,49 @@ export default function App() {
             <h3>AIOps Dashboard</h3>
             <p>Visualizes Circuits model metrics and performance trends.</p>
           </div>
+          <div className="card">
+            <img src={dashboard4} alt="Amazon Clone" />
+            <h3>Amazon Web Page Clone</h3>
+            <p>Responsive e-commerce UI clone replicating Amazon homepage design.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ✅ PROJECTS */}
+      <section className="section">
+        <h2>Projects</h2>
+        <div className="grid">
+          <div className="card">AI-Driven Workflow Automation</div>
+          <div className="card">SQL / SSIS Project</div>
+          <div className="card">Referral System – Financial Client</div>
+          <div className="card">Real-Time E-Commerce Security Dashboard</div>
+          <div className="card">AI Copilot for Secure Plugin Development</div>
+          <div className="card">Wireless Tester</div>
+        </div>
+
+        <div className="links">
+          <p>● Amazon Web Page Clone and JTest</p>
+          <p>● Magento Automation</p>
+          <p>● Tic Tac Toe (Game App)</p>
+          <p>
+            ● <a href="https://github.com/Siddhartha01Sinha" target="_blank">GitHub Repo 1</a>
+          </p>
+          <p>
+            ● <a href="https://github.com/SiddharthaSinhaGitHub" target="_blank">GitHub Repo 2</a>
+          </p>
+          <p>● Ansys Maxwell Design Project</p>
+          <p>● Developing my own AI tools (Personal Assistant)</p>
+        </div>
+      </section>
+
+
+      {/* ✅ AWARDS */}
+      <section className="section">
+        <h2>Awards</h2>
+        <div className="grid">
+          <div className="card">🏆 Topper of Branch (Gaya College Of Engineering, Govt. Bihat)</div>
+          <div className="card">🏆 Star Performer Award (Infosys)</div>
+          <div className="card">🏆 INSTA Award for Excellence (Infosys)</div>
         </div>
       </section>
 
@@ -186,6 +242,7 @@ export default function App() {
         </div>
         <p>Phone: 9731227618</p>
       </section>
+      <ChatBot />
     </div>
   );
 }

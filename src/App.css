@@ -4,6 +4,12 @@ body {
   background: #0b0f19;
   color: white;
 }
+.highlight {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  z-index: 2;
+}
 
 .app {
   padding: 20px;
@@ -22,45 +28,48 @@ body {
   gap: 20px;
 }
 
-/* Logo Section */
-.logo-section {
-  position: relative;
-  width: 200px;
-  height: 80px;
-  margin-bottom: 15px;
-  cursor: pointer;
-}
-
-/* Previous Company Logo (hidden behind, will animate on hover) */
-.previous-logo {
+/* Glow effect */
+.hero::before {
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transform: translateZ(-50px) scale(0.8);
-  transition: all 0.6s ease;
-  border-radius: 10px;
-  filter: brightness(0.6);
-  z-index: 1;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(34,197,94,0.2), transparent);
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(100px);
 }
 
-/* Current Company Logo (front) */
-.current-logo {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-  z-index: 2;
+.card {
+  transition: all 0.3s ease;
 }
 
-/* Hover effect: reveal previous logo from back */
-.logo-section:hover .previous-logo {
-  opacity: 1;
-  transform: translateZ(0) scale(1);
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Logo Section - FIXED */
+.logo-section {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.company-logo {
+  width: 120px;
+  padding: 15px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.company-logo:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(34,197,94,0.3);
 }
 
 /* Certificates Marquee */
@@ -70,11 +79,12 @@ body {
   border-top: 1px solid #333;
   border-bottom: 1px solid #333;
   padding: 10px 0;
+  margin-top: 0px;
 }
 
 .marquee-track {
   display: flex;
-  animation: scroll-left 15s linear infinite;
+  animation: scroll-left 10s linear infinite;
 }
 
 .marquee-track:hover {
@@ -181,7 +191,7 @@ body {
 .hero,
 .appreciation-section {
   position: relative;
-  height: 100vh;
+  height: 82vh;
   color: white;
   background-size: cover;
   background-position: center;
@@ -252,4 +262,46 @@ body {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+/* PROJECT LINKS */
+.links {
+  margin-top: 20px;
+  text-align: left;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.links p {
+  margin: 6px 0;
+  color: #cbd5f5;
+  font-size: 14px;
+}
+
+.links a {
+  color: #22c55e;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* AWARDS SPECIAL STYLE */
+.section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #22c55e;
+}
+
+/* Improve grid look */
+.grid .card {
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Smooth section spacing */
+.section {
+  margin-top: 80px;
 }
