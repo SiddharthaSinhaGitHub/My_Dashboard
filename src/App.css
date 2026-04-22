@@ -191,12 +191,14 @@ body {
 .hero,
 .appreciation-section {
   position: relative;
-  height: 82vh;
+  min-height: 100vh; /* ✅ allow content to grow */
+  height: auto;      /* ✅ remove restriction */
   color: white;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   transition: background-image 1s ease-in-out;
+  margin-top: 40px;
 }
 
 .overlay {
