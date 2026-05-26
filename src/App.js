@@ -114,31 +114,31 @@ export default function App() {
               <p>STC - IBM</p>
             </div>
                                     {/* COMMERCIAL LAUNDRY SERVICE SECTION */}
-      <section className="laundry-service" style={{margin: '2rem auto', maxWidth: 400, padding: 16, border: '2px solid #4caf50', borderRadius: 12, background: '#f9fff9'}}>
+      <section className="laundry-service" style={{margin: '1.2rem auto', maxWidth: 370, padding: 8, border: '2px solid #4caf50', borderRadius: 10, background: '#f6fff6'}}>
         <h2 style={{color: '#388e3c'}}>COMMERCIAL LAUNDRY SERVICES (Startup)</h2>
-        <div style={{display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap'}}>
-          <img src={washingImage} alt="Washing Clothes" style={{width: 120, borderRadius: 12, border: '1px solid #ccc'}} />
-          <img src={ladyImage} alt="Lady Washing Clothes" style={{width: 120, borderRadius: 12, border: '1px solid #ccc'}} />
+        <div style={{display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap', marginBottom: 6}}>
+          <img src={washingImage} alt="Washing Clothes" style={{width: 65, borderRadius: 8, border: '1px solid #4caf50'}} />
+          <img src={ladyImage} alt="Lady Washing Clothes" style={{width: 65, borderRadius: 8, border: '1px solid #4caf50'}} />
         </div>
-        <ul style={{textAlign: 'left', marginTop: 16}}>
+        <ul style={{textAlign: 'left', margin: '8px 0 8px 0', padding: '0 0 0 18px', color: '#256029', fontSize: '13px', lineHeight: 1.5, background: 'rgba(255,255,255,0.85)', borderRadius: 4}}>
           <li>Door-to-door laundry service by a local lady</li>
           <li>Wash at your home <b>or</b> we pick up & deliver (no delivery charge!)</li>
           <li>Low cost: <b>Per bucket rate</b> (mention in form)</li>
           <li>Service available <b>within 1km</b> of our location</li>
         </ul>
-        <p style={{margin: '1rem 0', color: '#444'}}>Fill the form below to book your laundry service. We will contact you and arrange everything!</p>
+        <p style={{margin: '6px 0', color: '#444', fontSize: 13}}>Fill the form below to book your laundry service. We will contact you and arrange everything!</p>
         <button
           onClick={() => setShowLaundryForm(true)}
           style={{
             display: 'inline-block',
             background: '#4caf50',
             color: '#fff',
-            padding: '12px 28px',
-            borderRadius: 8,
+            padding: '4px 14px',
+            borderRadius: 7,
             fontWeight: 'bold',
-            fontSize: 18,
+            fontSize: 14,
             textDecoration: 'none',
-            marginTop: 12,
+            marginTop: 6,
             border: 'none',
             cursor: 'pointer'
           }}
