@@ -114,7 +114,7 @@ export default function App() {
               <p>STC - IBM</p>
             </div>
                                     {/* COMMERCIAL LAUNDRY SERVICE SECTION */}
-      <section className="laundry-service" style={{margin: '2rem auto', maxWidth: 600, padding: 20, border: '2px solid #4caf50', borderRadius: 16, background: '#f9fff9'}}>
+      <section className="laundry-service" style={{margin: '2rem auto', maxWidth: 400, padding: 16, border: '2px solid #4caf50', borderRadius: 12, background: '#f9fff9'}}>
         <h2 style={{color: '#388e3c'}}>COMMERCIAL LAUNDRY SERVICES (Startup)</h2>
         <div style={{display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap'}}>
           <img src={washingImage} alt="Washing Clothes" style={{width: 120, borderRadius: 12, border: '1px solid #ccc'}} />
