@@ -104,10 +104,41 @@ export default function App() {
             </a>
           </div>
         </div>
-
-        {/* COMMERCIAL LAUNDRY SERVICE SECTION - LEFT FLOATING */}
-        <div style={{position: 'absolute', left: 0, top: 180, zIndex: 10, width: 270, minWidth: 220, maxWidth: 300, marginLeft: 18}}>
+        {/* COMMERCIAL LAUNDRY SERVICE SECTION - RESPONSIVE */}
+        <div className="laundry-service-container">
           <section className="laundry-service" style={{padding: 6, border: '2px solid #4caf50', borderRadius: 10, background: '#f6fff6', boxShadow: '0 2px 12px #0001'}}>
+                    {/* Responsive styles for laundry section */}
+                    <style>{`
+                      .laundry-service-container {
+                        position: absolute;
+                        left: 0;
+                        top: 180px;
+                        z-index: 10;
+                        width: 270px;
+                        min-width: 220px;
+                        max-width: 300px;
+                        margin-left: 18px;
+                      }
+                      @media (max-width: 600px) {
+                        .laundry-service-container {
+                          position: static !important;
+                          width: 96vw !important;
+                          min-width: unset !important;
+                          max-width: unset !important;
+                          margin: 18px auto 0 auto !important;
+                          z-index: auto !important;
+                          display: flex;
+                          justify-content: center;
+                        }
+                        .laundry-service {
+                          width: 100vw !important;
+                          max-width: 98vw !important;
+                          min-width: unset !important;
+                          border-radius: 10px !important;
+                          box-sizing: border-box;
+                        }
+                      }
+                    `}</style>
             <h2 style={{color: '#388e3c', fontSize: 16, margin: '8px 0 6px 0', textAlign: 'center'}}>COMMERCIAL LAUNDRY SERVICES (Startup)</h2>
             <div style={{display: 'flex', gap: 4, alignItems: 'center', flexWrap: 'wrap', marginBottom: 4, justifyContent: 'center'}}>
               <img src={washingImage} alt="Washing Clothes" style={{width: 38, borderRadius: 6, border: '1px solid #4caf50'}} />
