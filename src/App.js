@@ -137,6 +137,19 @@ export default function App() {
                           border-radius: 10px !important;
                           box-sizing: border-box;
                         }
+                        .profile-container .buttons {
+                          display: flex !important;
+                          flex-direction: column !important;
+                          align-items: stretch !important;
+                          gap: 10px !important;
+                          margin: 18px 0 0 0 !important;
+                        }
+                        .profile-container .btn {
+                          width: 100% !important;
+                          margin: 0 !important;
+                          font-size: 16px !important;
+                          box-sizing: border-box;
+                        }
                       }
                     `}</style>
             <h2 style={{color: '#388e3c', fontSize: 16, margin: '8px 0 6px 0', textAlign: 'center'}}>COMMERCIAL LAUNDRY SERVICES (Startup)</h2>
