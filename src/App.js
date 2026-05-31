@@ -105,6 +105,89 @@ export default function App() {
           </div>
         </div>
 
+        {/* COMMERCIAL LAUNDRY SERVICE SECTION - LEFT FLOATING */}
+        <div style={{position: 'absolute', left: 0, top: 180, zIndex: 10, width: 270, minWidth: 220, maxWidth: 300, marginLeft: 18}}>
+          <section className="laundry-service" style={{padding: 6, border: '2px solid #4caf50', borderRadius: 10, background: '#f6fff6', boxShadow: '0 2px 12px #0001'}}>
+            <h2 style={{color: '#388e3c', fontSize: 16, margin: '8px 0 6px 0', textAlign: 'center'}}>COMMERCIAL LAUNDRY SERVICES (Startup)</h2>
+            <div style={{display: 'flex', gap: 4, alignItems: 'center', flexWrap: 'wrap', marginBottom: 4, justifyContent: 'center'}}>
+              <img src={washingImage} alt="Washing Clothes" style={{width: 38, borderRadius: 6, border: '1px solid #4caf50'}} />
+              <img src={ladyImage} alt="Lady Washing Clothes" style={{width: 38, borderRadius: 6, border: '1px solid #4caf50'}} />
+            </div>
+            <ul style={{
+              textAlign: 'left',
+              margin: '4px 0 4px 0',
+              padding: '0 0 0 16px',
+              color: '#256029',
+              fontSize: '11px',
+              lineHeight: 1.35
+            }}>
+              <li>Door-to-door laundry service by a local lady</li>
+              <li>Wash at your home <b>or</b> we pick up & deliver (no delivery charge!)</li>
+              <li>Low cost: <b>Per bucket rate</b> (mention in form)</li>
+              <li>Service available <b>within 1km</b> of our location</li>
+            </ul>
+            <p style={{margin: '4px 0', color: '#444', fontSize: 11}}>Fill the form below to book your laundry service. We will contact you and arrange everything!</p>
+            <button
+              onClick={() => setShowLaundryForm(true)}
+              style={{
+                display: 'inline-block',
+                background: '#4caf50',
+                color: '#fff',
+                padding: '2px 10px',
+                borderRadius: 6,
+                fontWeight: 'bold',
+                fontSize: 11,
+                textDecoration: 'none',
+                marginTop: 4,
+                border: 'none',
+                cursor: 'pointer',
+                width: '100%'
+              }}
+            >
+              Book Laundry Service
+            </button>
+            {/* Laundry Booking Modal */}
+            {showLaundryForm && (
+              <div style={{
+                position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
+                background: 'rgba(0,0,0,0.4)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center'
+              }}>
+                <div style={{background: '#fff', padding: 24, borderRadius: 14, minWidth: 220, boxShadow: '0 4px 24px #0002', position: 'relative', maxWidth: 340}}>
+                  <button onClick={() => setShowLaundryForm(false)} style={{position: 'absolute', top: 8, right: 12, background: 'none', border: 'none', fontSize: 18, cursor: 'pointer', color: '#888'}}>×</button>
+                  <h3 style={{marginBottom: 8, color: '#388e3c', fontSize: 15}}>Laundry Booking Form</h3>
+                  <div style={{marginBottom: 10, color: '#444', fontSize: 12}}>
+                    Please fill in your details below. All fields are required.
+                  </div>
+                  <form onSubmit={handleLaundrySubmit}>
+                    <div style={{marginBottom: 10}}>
+                      <label style={{fontWeight: 500, fontSize: 12}}>Full Name:<br/>
+                        <input name="name" value={laundryForm.name} onChange={handleLaundryInput} required placeholder="Enter your full name" style={{width: '100%', padding: 6, borderRadius: 5, border: '1px solid #ccc', marginTop: 3, fontSize: 12}} />
+                      </label>
+                    </div>
+                    <div style={{marginBottom: 10}}>
+                      <label style={{fontWeight: 500, fontSize: 12}}>WhatsApp Number:<br/>
+                        <input name="whatsapp" value={laundryForm.whatsapp} onChange={handleLaundryInput} required pattern="[0-9]{10,}" title="Enter valid WhatsApp number" placeholder="e.g. 9876543210" style={{width: '100%', padding: 6, borderRadius: 5, border: '1px solid #ccc', marginTop: 3, fontSize: 12}} />
+                      </label>
+                    </div>
+                    <div style={{marginBottom: 10}}>
+                      <label style={{fontWeight: 500, fontSize: 12}}>Location (address or landmark):<br/>
+                        <input name="location" value={laundryForm.location} onChange={handleLaundryInput} required placeholder="e.g. Near City Mall, Sector 5" style={{width: '100%', padding: 6, borderRadius: 5, border: '1px solid #ccc', marginTop: 3, fontSize: 12}} />
+                      </label>
+                    </div>
+                    <div style={{marginBottom: 10}}>
+                      <label style={{fontWeight: 500, fontSize: 12}}>Number of Buckets:<br/>
+                        <input name="buckets" value={laundryForm.buckets} onChange={handleLaundryInput} required type="number" min="1" placeholder="e.g. 2" style={{width: '100%', padding: 6, borderRadius: 5, border: '1px solid #ccc', marginTop: 3, fontSize: 12}} />
+                      </label>
+                    </div>
+                    <button type="submit" style={{background: '#4caf50', color: '#fff', padding: '7px 18px', border: 'none', borderRadius: 7, fontWeight: 'bold', fontSize: 13, cursor: 'pointer', marginTop: 6, width: '100%'}}>Submit</button>
+                    {formSubmitted && <div style={{color: '#388e3c', marginTop: 10, fontSize: 12}}>Booking submitted!</div>}
+                  </form>
+                </div>
+              </div>
+            )}
+          </section>
+        </div>
+
         {/* ✅ DROPDOWNS */}
         <div className="top-bar">
           <div className="dropdown">
@@ -113,78 +196,6 @@ export default function App() {
               <p>FCB - Infosys</p>
               <p>STC - IBM</p>
             </div>
-                                    {/* COMMERCIAL LAUNDRY SERVICE SECTION */}
-      <section className="laundry-service" style={{margin: '1.2rem auto', maxWidth: 370, padding: 8, border: '2px solid #4caf50', borderRadius: 10, background: '#f6fff6'}}>
-        <h2 style={{color: '#388e3c'}}>COMMERCIAL LAUNDRY SERVICES (Startup)</h2>
-        <div style={{display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap', marginBottom: 6}}>
-          <img src={washingImage} alt="Washing Clothes" style={{width: 65, borderRadius: 8, border: '1px solid #4caf50'}} />
-          <img src={ladyImage} alt="Lady Washing Clothes" style={{width: 65, borderRadius: 8, border: '1px solid #4caf50'}} />
-        </div>
-        <ul style={{textAlign: 'left', margin: '8px 0 8px 0', padding: '0 0 0 18px', color: '#256029', fontSize: '13px', lineHeight: 1.5, background: 'rgba(255,255,255,0.85)', borderRadius: 4}}>
-          <li>Door-to-door laundry service by a local lady</li>
-          <li>Wash at your home <b>or</b> we pick up & deliver (no delivery charge!)</li>
-          <li>Low cost: <b>Per bucket rate</b> (mention in form)</li>
-          <li>Service available <b>within 1km</b> of our location</li>
-        </ul>
-        <p style={{margin: '6px 0', color: '#444', fontSize: 13}}>Fill the form below to book your laundry service. We will contact you and arrange everything!</p>
-        <button
-          onClick={() => setShowLaundryForm(true)}
-          style={{
-            display: 'inline-block',
-            background: '#4caf50',
-            color: '#fff',
-            padding: '4px 14px',
-            borderRadius: 7,
-            fontWeight: 'bold',
-            fontSize: 14,
-            textDecoration: 'none',
-            marginTop: 6,
-            border: 'none',
-            cursor: 'pointer'
-          }}
-        >
-          Book Laundry Service
-        </button>
-        {/* Laundry Booking Modal */}
-        {showLaundryForm && (
-          <div style={{
-            position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
-            background: 'rgba(0,0,0,0.4)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center'
-          }}>
-            <div style={{background: '#fff', padding: 32, borderRadius: 16, minWidth: 320, boxShadow: '0 4px 24px #0002', position: 'relative', maxWidth: 400}}>
-              <button onClick={() => setShowLaundryForm(false)} style={{position: 'absolute', top: 12, right: 16, background: 'none', border: 'none', fontSize: 22, cursor: 'pointer', color: '#888'}}>×</button>
-              <h3 style={{marginBottom: 8, color: '#388e3c'}}>Laundry Booking Form</h3>
-              <div style={{marginBottom: 12, color: '#444', fontSize: 15}}>
-                Please fill in your details below. All fields are required.
-              </div>
-              <form onSubmit={handleLaundrySubmit}>
-                <div style={{marginBottom: 12}}>
-                  <label style={{fontWeight: 500}}>Full Name:<br/>
-                    <input name="name" value={laundryForm.name} onChange={handleLaundryInput} required placeholder="Enter your full name" style={{width: '100%', padding: 8, borderRadius: 6, border: '1px solid #ccc', marginTop: 4}} />
-                  </label>
-                </div>
-                <div style={{marginBottom: 12}}>
-                  <label style={{fontWeight: 500}}>WhatsApp Number:<br/>
-                    <input name="whatsapp" value={laundryForm.whatsapp} onChange={handleLaundryInput} required pattern="[0-9]{10,}" title="Enter valid WhatsApp number" placeholder="e.g. 9876543210" style={{width: '100%', padding: 8, borderRadius: 6, border: '1px solid #ccc', marginTop: 4}} />
-                  </label>
-                </div>
-                <div style={{marginBottom: 12}}>
-                  <label style={{fontWeight: 500}}>Location (address or landmark):<br/>
-                    <input name="location" value={laundryForm.location} onChange={handleLaundryInput} required placeholder="e.g. Near City Mall, Sector 5" style={{width: '100%', padding: 8, borderRadius: 6, border: '1px solid #ccc', marginTop: 4}} />
-                  </label>
-                </div>
-                <div style={{marginBottom: 12}}>
-                  <label style={{fontWeight: 500}}>Number of Buckets:<br/>
-                    <input name="buckets" value={laundryForm.buckets} onChange={handleLaundryInput} required type="number" min="1" placeholder="e.g. 2" style={{width: '100%', padding: 8, borderRadius: 6, border: '1px solid #ccc', marginTop: 4}} />
-                  </label>
-                </div>
-                <button type="submit" style={{background: '#4caf50', color: '#fff', padding: '10px 24px', border: 'none', borderRadius: 8, fontWeight: 'bold', fontSize: 16, cursor: 'pointer', marginTop: 8}}>Submit</button>
-                {formSubmitted && <div style={{color: '#388e3c', marginTop: 12}}>Booking submitted!</div>}
-              </form>
-            </div>
-          </div>
-        )}
-      </section>
           </div>
 
           <div className="dropdown">
